@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialMedia from '../components/SocialMedia.astro';
+---
+
+<Layout title="Lucas Gonzalez | Desarrollador Web Full Stack +2 años de experiencia.">
+	<main>
+		<!-- Header -->
+		<header class="flex flex-col sm:flex-row justify-between items-center text-white animacion-vertical flex-wrap p-4">
+			<div class="mb-4 sm:mb-0 flex justify-center sm:justify-start">
+				<img src="/img/Avatar.png" alt="Imagen de Avatar" class="h-14 w-14 rounded-full">
+			</div>
+
+			<nav class="flex justify-around sm:justify-end flex-wrap">
+				<ul class="flex flex-col sm:flex-row gap-3 text-xl">
+					<li>
+						<a class="hover:text-red-400 p-2 sm:p-5" href="#">Home</a>
+					</li>
+					<li>
+						<a class="hover:text-red-400 p-2 sm:p-5" href="#">Experiencia</a>
+					</li>
+					<li>
+						<a class="hover:text-red-400 p-2 sm:p-5" href="#">Proyectos</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Hero -->
+		<section class=" max-w-5xl flex flex-col justify-center align-center mx-auto animacion-horizontal text-white font-bold">
+			<h1 class="text-7xl"><span class="text-red-500">L</span>ucas Gonzalez</h1>
+			<p>Desarrollador Web Full Stack <span class="text-red-400">+2 años</span> de experiencia.</p>
+			<SocialMedia />
+		</section>
+
+		<!-- About me -->
+		<section class="max-w-5xl mx-auto text-white">
+			<h1 class="font-bold text-4xl text-center mb-12">Acerca de mi</h1>
+			<p class="text-left text-wrap">
+				Especialista en Tecnología de la Información con certificación en Ciberseguridad para sistemas de control industrial.
+				Poseo una sólida experiencia en desarrollo de software, complementada con habilidades en gestión de redes y soporte técnico.
+				Destaco por mi enfoque proactivo en la resolución de problemas y mi dedicación a la mejora continua en el ámbito de la ciberseguridad.
+				<br><br>
+				Soy un comunicador eficaz, capaz de colaborar eficientemente en equipos multidisciplinarios. 
+				Mi responsabilidad y compromiso con la calidad se reflejan en cada proyecto que emprendo,
+				siempre con el objetivo de fortalecer la seguridad y eficiencia de los sistemas tecnológicos.	
+			</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	header {
+		-webkit-box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
+	}
+
+	section {
+		height: 80vh;
+		margin-bottom: 10rem;
+	}
+
+	.animacion-vertical {
+		animation: animacion-vertical 2s ease-in-out 1;
+	}
+
+	.animacion-horizontal {
+		animation: animacion-horizontal 2s ease-in-out 1;
+	}
+</style>
