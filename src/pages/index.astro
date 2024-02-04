@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SocialMedia from '../components/SocialMedia.astro';
-import MenuDropIcon from '../components/icons/MenuDropIcon.astro';
+import MenuDropIcon from '../components/icons/elements/MenuDropIcon.astro';
+import Technologies from '../components/Technologies.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Lucas Gonzalez | Desarrollador Web Full Stack +2 años de experiencia.">
@@ -21,25 +23,26 @@ import MenuDropIcon from '../components/icons/MenuDropIcon.astro';
 
 				<div class="origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" id="menu-items" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
 					<div class="py-1" role="none">
-						<a href="mailto:lucas.gonzalez.espinosa@gmail.com" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
-						<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Experiencia</a>
-						<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Proyectos</a>
+						<a href="#home-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
+						<a href="#about-seccion" class="text-gray-700 block px-4 py-2 text-sm">Acerca de mí</a>
+						<a href="#technologies-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Stack tecnologico</a>
+						<a href="#projects-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Proyectos</a>
 					</div>
 				</div>
 			</div>
 		</header>
 
 		<!-- Hero -->
-		<section class=" max-w-5xl flex flex-col justify-center align-center mx-auto animacion-horizontal text-white font-bold">
+		<section class=" max-w-5xl flex flex-col justify-center align-center mx-auto animacion-horizontal text-white font-bold p-10" id="home-seccion">
 			<h1 class="text-7xl"><span class="text-red-500">L</span>ucas Gonzalez</h1>
 			<p>Desarrollador Web Full Stack <span class="text-red-400">+2 años</span> de experiencia.</p>
 			<SocialMedia />
 		</section>
 
 		<!-- About me -->
-		<section class="max-w-5xl mx-auto text-white">
-			<h1 class="font-bold text-4xl text-center mb-12">Acerca de mi</h1>
-			<p class="text-left text-wrap mb-14">
+		<section class="max-w-5xl mx-auto text-white animacion-aparecer" id="about-seccion">
+			<h1 class="font-bold text-5xl text-center mb-12">Acerca de mi</h1>
+			<p class="text-left text-wrap mb-14 p-10">
 				<span class="text-xl font-bold text-orange-500">Especialista</span> en Tecnología de la Información con certificación en <span class=" font-bold text-red-300 text-xl">Ciberseguridad</span> para sistemas de control industrial.
 				Poseo una sólida experiencia en <span class="text-blue-300 font-bold text-xl">desarrollo de software</span>, complementada con habilidades en gestión de redes y soporte técnico.
 				Destaco por mi enfoque proactivo en la resolución de problemas y mi dedicación a la mejora continua en el ámbito de la ciberseguridad.
@@ -50,33 +53,23 @@ import MenuDropIcon from '../components/icons/MenuDropIcon.astro';
 			</p>
 
 			<!-- Slider para las habilidades -->
-			<div class="tecnologias">
-				<h1 class="text-3xl font-bold">Stack tecnológico</h1>
+			<div class="tecnologias" id="technologies-seccion">
+				<h1 class="text-3xl font-bold text-center mb-12">Stack tecnológico</h1>
+				<Technologies />
 			</div>
 			
 		</section>
+
+		<section id="projects-seccion">
+			<Projects />
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<div class="max-w-5xl mx-auto text-white animacion-aparecer">
+				<p class="text-center mb-8">© 2024 Lucas Gonzalez. Todos los derechos reservados.</p>
+			</div>
+		</footer>
 	</main>
 	<script src="/js/app.js" is:inline></script>
 </Layout>
-
-
-<style>
-	header {
-		-webkit-box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
-		box-shadow: 0px .5px 5px 0px rgba(0,0,0,0.75);
-	}
-
-	section {
-		height: 80vh;
-		margin-bottom: 10rem;
-	}
-
-	.animacion-vertical {
-		animation: animacion-vertical 2s ease-in-out 1;
-	}
-
-	.animacion-horizontal {
-		animation: animacion-horizontal 2s ease-in-out 1;
-	}
-</style>

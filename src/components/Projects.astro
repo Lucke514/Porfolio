@@ -1,0 +1,88 @@
+---
+import GithubIcon from "./icons/socialMedia/GithubIcon.astro";
+
+
+---
+
+<h1 class="text-center mb-9 text-5xl text-white font-bold">Proyectos</h1>
+<div id="proyectos" class="grid md:grid-cols-2 grid-cols-1 animacion-aparecer p-10 gap-5 md:gap-0">
+
+</div>
+
+<script>
+    /* importar el logo de github */
+    const githubIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 icon icon-tabler icon-tabler-brand-github" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+    </svg>
+    `
+
+
+    const proyectos = []
+
+    // Proyecto 1
+    const proyecto1 = {
+        nombre: "Gestion de entrega Farmacia",
+        img : "img/FarmaciaIcon.png",
+        img_descripcion: "Sistema de gestion Farmacia Hospital Ovalle",
+        lugar: "Ovalle, Chile",
+        fecha: "Enero - Febrero, 2024",
+        descripcion: "Proyecto desarrollado en conjunto con un equipo de practicantes en el Hospital de Ovalle, con el objetivo de mejorar la eficiencia en la entrega de medicamentos a los pacientes.",
+        repositorio: false,
+        link: false
+    }
+
+    proyectos.push(proyecto1)
+
+    // Proyecto 2
+    const proyecto2 = {
+        nombre: "Narala",
+        img : "img/NaralaIcon.jpeg",
+        img_descripcion: "E-commerce de productos natura",
+        lugar: "Ovalle, Chile",
+        fecha: "Enero - Actualmente, 2024",
+        descripcion: "Proyecto frelance desarrollado para un cliente de la ciudad de Ovalle, con el objetivo de crear una tienda virtual para la venta de productos Natura.",
+        repositorio: true,
+        link: "https://github.com/lucke514/narala"
+    }
+
+    proyectos.push(proyecto2)
+
+    proyectos.forEach(proyecto => {
+        const proyectos = document.getElementById("proyectos")
+        
+        if (proyectos) { 
+        proyectos.innerHTML += `
+            <div class="border border-blue-300 shadow rounded-md p-4 max-w-xl mx-auto">
+                <div class="flex space-x-4">
+                    <div class="rounded-full h-14 w-14 bg-slate-700">
+                        <img src="${proyecto.img}" alt="${proyecto.img_descripcion}" class="rounded-full">
+                    </div>
+                    <div class="flex-1 space-y-6 py-1">
+                        <h2 class="bg-slate-700 rounded text-white font-bold p-2">${proyecto.nombre}</h2>
+                        <div class="space-y-3">
+                            <div class="grid gap-4 md:grid-cols-4 grid-cols-2">
+                                <p class="bg-slate-700 rounded text-white p-2 col-span-2">${proyecto.lugar}</p>
+                                <h3 class="bg-slate-700 rounded text-white p-2 col-span-2">${proyecto.fecha}</h3>
+                            </div>
+                            <p class="text-white bg-slate-700 rounded p-2">
+                                ${proyecto.descripcion}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-2">
+                    <a ${proyecto.repositorio ? `href="${proyecto.link}"` : "disabled"} class="bg-purple-950 text-white px-3 py-2 rounded-lg inline-flex items-center">
+                        ${githubIcon}
+                        ${proyecto.repositorio ? "Ver repositorio" : "Repositorio no disponible"}
+                    </a>
+                </div>
+            </div>
+
+        `
+        }
+    });
+
+    
+</script>
