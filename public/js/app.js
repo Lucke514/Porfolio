@@ -13,13 +13,9 @@ menuButton.addEventListener('click', () => {
     menuItems.style.display = menuItems.style.display === 'none' ? 'block' : 'none';
 });
 
-menuButton.addEventListener('focusout', () => {
+menuItems.addEventListener('focusout' , ()  => {
     menuItems.style.display = 'none';
-});
-
-menuItems.addEventListener('click', () => {
-    menuItems.style.display = 'none';
-});
+})
 
 document.addEventListener('click', function(e) {
     const targetElement = e.target; 
@@ -30,5 +26,7 @@ document.addEventListener('click', function(e) {
         menuItems.style.display = 'none';
     }
 });
+
+// --> Funciones
 
 // -> Footer

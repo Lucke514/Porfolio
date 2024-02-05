@@ -7,26 +7,28 @@ import Projects from '../components/Projects.astro';
 ---
 
 <Layout title="Lucas Gonzalez | Desarrollador Web Full Stack +2 años de experiencia.">
-	<main>
+	<main id="init">
 		<!-- Header -->
-		<header class="flex flex-row justify-between items-center text-white animacion-vertical flex-wrap p-4">
-			<div class="mb-4 sm:mb-0 flex justify-center sm:justify-start">
-				<img src="/img/Avatar.png" alt="Imagen de Avatar" class="h-14 w-14 rounded-full">
-			</div>
-
-			<div class="relative inline-block text-left">
-				<div>
-					<button type="button" class="inline-flex justify-center w-full rounded-md borde shadow-sm px-4 py-2text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
-						<MenuDropIcon class=" bg-transparent stroke-red-400"/>
-					</button>
+		<header class="">
+			<div class="header-contenido max-w-7xl flex flex-row justify-between items-center text-white animacion-vertical flex-wrap p-4 mx-auto">
+				<div class="mb-4 sm:mb-0 flex justify-center sm:justify-start">
+					<img src="/img/Avatar.png" alt="Imagen de Avatar" class="h-14 w-14 rounded-full">
 				</div>
 
-				<div class="origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" id="menu-items" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-					<div class="py-1" role="none">
-						<a href="#home-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
-						<a href="#about-seccion" class="text-gray-700 block px-4 py-2 text-sm">Acerca de mí</a>
-						<a href="#technologies-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Stack tecnologico</a>
-						<a href="#projects-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Proyectos</a>
+				<div class="relative inline-block text-left">
+					<div>
+						<button type="button" class="inline-flex justify-center w-full rounded-md borde shadow-sm px-4 py-2text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
+							<MenuDropIcon class=" bg-transparent stroke-red-400"/>
+						</button>
+					</div>
+
+					<div class="origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" id="menu-items" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+						<div class="py-1" role="none">
+							<a href="#home-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
+							<a href="#about-seccion" class="text-gray-700 block px-4 py-2 text-sm">Acerca de mí</a>
+							<a href="#technologies-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Stack tecnologico</a>
+							<a href="#projects-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Proyectos</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -42,7 +44,7 @@ import Projects from '../components/Projects.astro';
 		<!-- About me -->
 		<section class="max-w-5xl mx-auto text-white animacion-aparecer" id="about-seccion">
 			<h1 class="font-bold text-5xl text-center mb-12">Acerca de mi</h1>
-			<p class="text-left text-wrap mb-14 p-10">
+			<p class="text-left text-wrap mb-14 p-10" data-aos="fade-up-left">
 				<span class="text-xl font-bold text-orange-500">Especialista</span> en Tecnología de la Información con certificación en <span class=" font-bold text-red-300 text-xl">Ciberseguridad</span> para sistemas de control industrial.
 				Poseo una sólida experiencia en <span class="text-blue-300 font-bold text-xl">desarrollo de software</span>, complementada con habilidades en gestión de redes y soporte técnico.
 				Destaco por mi enfoque proactivo en la resolución de problemas y mi dedicación a la mejora continua en el ámbito de la ciberseguridad.
@@ -53,23 +55,30 @@ import Projects from '../components/Projects.astro';
 			</p>
 
 			<!-- Slider para las habilidades -->
-			<div class="tecnologias" id="technologies-seccion">
+			<div class="tecnologias" id="technologies-seccion" data-aos="fade-up-right">
 				<h1 class="text-3xl font-bold text-center mb-12">Stack tecnológico</h1>
 				<Technologies />
 			</div>
 			
 		</section>
 
-		<section id="projects-seccion">
+		<section id="projects-seccion" data-aos="zoom-in-up">
 			<Projects />
 		</section>
 
 		<!-- Footer -->
 		<footer>
-			<div class="max-w-5xl mx-auto text-white animacion-aparecer">
-				<p class="text-center mb-8">© 2024 Lucas Gonzalez. Todos los derechos reservados.</p>
+			<div class="max-w-5xl mx-auto text-white animacion-aparecer mb-8">
+				<p class="text-center mb-8">© 2024 <a href="https://www.linkedin.com/in/lucas-gonzalez-espinosa-073bba248">Lucas Gonzalez</a>. Todos los derechos reservados.</p>
 			</div>
 		</footer>
 	</main>
+	
+	<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script is:inline>
+		AOS.init();
+	</script>
+
 	<script src="/js/app.js" is:inline></script>
+	<script type="module" src="/js/smoothscroll.js"></script>
 </Layout>
