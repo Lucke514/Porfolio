@@ -29,4 +29,37 @@ document.addEventListener('click', function(e) {
 
 // --> Funciones
 
+// -> Header
+
+// -> Contact
+const contactForm = document.getElementById('formulario-contacto');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+    const message = document.getElementById('message').value; 
+
+    // enviar la informacion a la base de datos
+    fetch('/contacto', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre, apellido, email, telefono, message })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok) {
+            alert('Mensaje enviado correctamente');
+        } else {
+            alert('Error al enviar el mensaje');
+        }
+    })
+
+});
+
 // -> Footer

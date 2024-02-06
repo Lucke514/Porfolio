@@ -4,12 +4,13 @@ import SocialMedia from '../components/SocialMedia.astro';
 import MenuDropIcon from '../components/icons/elements/MenuDropIcon.astro';
 import Technologies from '../components/Technologies.astro';
 import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout title="Lucas Gonzalez | Desarrollador Web Full Stack +2 años de experiencia.">
 	<main id="init">
 		<!-- Header -->
-		<header class="">
+		<header class="fixed  top-0 w-full">
 			<div class="header-contenido max-w-7xl flex flex-row justify-between items-center text-white animacion-vertical flex-wrap p-4 mx-auto">
 				<div class="mb-4 sm:mb-0 flex justify-center sm:justify-start">
 					<img src="/img/Avatar.png" alt="Imagen de Avatar" class="h-14 w-14 rounded-full">
@@ -64,6 +65,11 @@ import Projects from '../components/Projects.astro';
 
 		<section id="projects-seccion" data-aos="zoom-in-up">
 			<Projects />
+		</section>
+
+		<!-- Contact -->
+		<section id="contact-seccion" data-aos="zoom-in-up">
+			<Contact />
 		</section>
 
 		<!-- Footer -->
