@@ -27,39 +27,19 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// --> Funciones
+// -> Scroll
 
-// -> Header
+// hacer que al momento de hacer scroll apareza el boton de ir arriba
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 100) {
+        document.getElementById('go-top').style.display = 'block';
+    } else {
+        document.getElementById('go-top').style.display = 'none';
+    }
+}
 
-// -> Contact
-const contactForm = document.getElementById('formulario-contacto');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const email = document.getElementById('email').value;
-    const telefono = document.getElementById('telefono').value;
-    const message = document.getElementById('message').value; 
-
-    // enviar la informacion a la base de datos
-    fetch('/contacto', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nombre, apellido, email, telefono, message })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.ok) {
-            alert('Mensaje enviado correctamente');
-        } else {
-            alert('Error al enviar el mensaje');
-        }
-    })
-
-});
-
-// -> Footer
+// hacer que al momento de hacer click en el boton de ir arriba, la pagina se desplace hacia arriba
+function irArriba() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+}  

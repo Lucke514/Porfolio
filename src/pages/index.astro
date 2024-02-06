@@ -5,34 +5,14 @@ import MenuDropIcon from '../components/icons/elements/MenuDropIcon.astro';
 import Technologies from '../components/Technologies.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="Lucas Gonzalez | Desarrollador Web Full Stack +2 años de experiencia.">
 	<main id="init">
 		<!-- Header -->
 		<header class="fixed  top-0 w-full">
-			<div class="header-contenido max-w-7xl flex flex-row justify-between items-center text-white animacion-vertical flex-wrap p-4 mx-auto">
-				<div class="mb-4 sm:mb-0 flex justify-center sm:justify-start">
-					<img src="/img/Avatar.png" alt="Imagen de Avatar" class="h-14 w-14 rounded-full">
-				</div>
-
-				<div class="relative inline-block text-left">
-					<div>
-						<button type="button" class="inline-flex justify-center w-full rounded-md borde shadow-sm px-4 py-2text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
-							<MenuDropIcon class=" bg-transparent stroke-red-400"/>
-						</button>
-					</div>
-
-					<div class="origin-top-right absolute right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" id="menu-items" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-						<div class="py-1" role="none">
-							<a href="#home-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Home</a>
-							<a href="#about-seccion" class="text-gray-700 block px-4 py-2 text-sm">Acerca de mí</a>
-							<a href="#technologies-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Stack tecnologico</a>
-							<a href="#projects-seccion" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Proyectos</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<Header />
 		</header>
 
 		<!-- Hero -->
@@ -78,6 +58,13 @@ import Contact from '../components/Contact.astro';
 				<p class="text-center mb-8">© 2024 <a href="https://www.linkedin.com/in/lucas-gonzalez-espinosa-073bba248">Lucas Gonzalez</a>. Todos los derechos reservados.</p>
 			</div>
 		</footer>
+
+		<!-- Boton para subir -->
+		<button id="scroll-top" onclick="return irArriba()" class="fixed bottom-8 right-8 bg-red-400 hover:bg-red-500 text-white p-4 rounded-full shadow-lg hover:animate-bounce" data-aos="fade-up" aria-label="Subir">
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+			</svg>
+		</button>
 	</main>
 	
 	<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
