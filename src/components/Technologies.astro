@@ -8,9 +8,15 @@ import AndroidIcon from './icons/Technologies/AndroidIcon.astro';
 import GitIcon from './icons/Technologies/GitIcon.astro';
 import PythonIcon from './icons/Technologies/PythonIcon.astro';
 import GoIcon from './icons/Technologies/GoIcon.astro';
+import PhpIcon from './icons/Technologies/PhpIcon.astro';
+import AstroIcon from './icons/Technologies/AstroIcon.astro';
+import TailwindIcon from './icons/Technologies/TailwindIcon.astro';
+import DockerIcon from './icons/Technologies/DockerIcon.astro';
+import FirebaseIcon from './icons/Technologies/FirebaseIcon.astro';
+import PostmanIcon from './icons/Technologies/PostmanIcon.astro';
 ---
 
-<div class="stack-tecnologico flex flex-row flex-wrap justify-around gap-6 animacion-horizontal p-10">
+<div class="stack-tecnologico grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-12 gap-6 animacion-horizontal p-10">
     <div class="tecnologia flex flex-col text-center">
         <HtmlIcon class="h-20 hover:animate-pulse hover:stroke-orange-500"/>
         <p>HTML</p>
@@ -24,8 +30,20 @@ import GoIcon from './icons/Technologies/GoIcon.astro';
         <p>JavaScript</p>
     </div>
     <div class="tecnologia flex flex-col text-center">
+        <PhpIcon class="h-20 hover:animate-pulse hover:stroke-blue-500"/>
+        <p>PHP</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
+        <AstroIcon class="h-20 hover:animate-pulse hover:stroke-blue-500"/>
+        <p>Astro</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
         <NodeIcon class="h-20 hover:animate-pulse hover:stroke-green-600"/>
         <p>Node.js</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
+        <TailwindIcon class="h-20 hover:animate-pulse hover:stroke-cyan-600"/>
+        <p>Tailwind</p>
     </div>
     <div class="tecnologia flex flex-col text-center">
         <AndroidIcon class="h-20 hover:animate-pulse hover:stroke-green-400"/>
@@ -46,5 +64,17 @@ import GoIcon from './icons/Technologies/GoIcon.astro';
     <div class="tecnologia flex flex-col text-center">
         <GitIcon class="h-20 hover:animate-pulse hover:stroke-purple-500"/>
         <p>Git</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
+        <DockerIcon class="h-20 hover:animate-pulse hover:stroke-blue-500"/>
+        <p>Docker</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
+        <FirebaseIcon class="h-20 hover:animate-pulse hover:stroke-yellow-500"/>
+        <p>Firebase</p>
+    </div>
+    <div class="tecnologia flex flex-col text-center">
+        <PostmanIcon class="h-20 hover:animate-pulse hover:stroke-red-500"/>
+        <p>Postman</p>
     </div>
 </div>

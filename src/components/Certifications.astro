@@ -1,0 +1,82 @@
+<div>
+    <div class="contenedor-certificaciones grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6 mx-auto">
+    </div>
+    
+</div>
+
+
+<script>
+    const certificacion1 = {
+        nombre: "Introduccion a la ciberseguridad para ICS",
+        img: "img/certifications/introduccion-a-la-ciberseguridad-para-ics.png",
+        alt : "Introduccion a la ciberseguridad para ICS",
+        url: 'https://www.credly.com/badges/bcbf143b-88a5-4ad0-92e8-f69461ce2c0b/public_url',
+        importante: false
+    }
+
+    const certificacion2 = {
+        nombre: "Estándares y Buenas Prácticas de Ciberseguridad para Infraestructuras Críticas Industriales",
+        img: "img/certifications/estandares-y-buenas-practicas-de-ciberseguridad-para-infraestructuras-criticas-industriales.png",
+        alt : "Estándares y Buenas Prácticas de Ciberseguridad para Infraestructuras Críticas Industriales",
+        url: 'https://www.credly.com/badges/ddb4d94e-075c-4668-a254-00254fb31166/public_url',
+        importante: false
+    }
+
+    const certificacion3 = {
+        nombre: "Implementador Líder de un Ransomware Business Continuity Plan (RBCP)",
+        img: "img/certifications/implementador-lider-de-un-ransomware-business-conti.png",
+        alt : "Implementador Líder de un Ransomware Business Continuity Plan (RBCP)",
+        url: 'https://www.credly.com/badges/e0eb612d-84c0-4704-970c-408186038910/public_url',
+        importante: false
+    }
+
+    const certificacion4 = {
+        nombre: "Implementador Líder Ciberseguridad CIP",
+        img: "img/certifications/implementador-lider-ciberseguridad-cip.png",
+        alt : "Implementador Líder Ciberseguridad CIP",
+        url: 'https://www.credly.com/badges/aba616e7-1941-40cc-a485-fe2ff86ad7ac/public_url',
+        importante: false
+    }
+
+    const certificacion5 = {
+        nombre: "Diplomado en ciberseguridad industrial",
+        img: "img/certifications/diplomado-en-ciberseguridad-industrial.png",
+        alt : "Diplomado en ciberseguridad industrial",
+        url: 'https://www.credly.com/badges/3ac42318-ba42-45d0-9832-33ad0db3af2a/public_url',
+        importante: true
+    }
+
+    const certificacion6 = {
+        nombre: "Técnicas de Evasión de Sistemas de Seguridad y Creación de Malware",
+        img: "img/certifications/tecnicas-de-evasion-de-sistemas-de-seguridad-y-creacion-de-malware.png",
+        alt : "Técnicas de Evasión de Sistemas de Seguridad y Creación de Malware",
+        url: 'https://www.credly.com/badges/0e7da853-17be-4393-9f8c-b49949ce67ff/public_url',
+        importante: false
+    }
+
+    const certificaciones = [certificacion1, certificacion2, certificacion3, certificacion4, certificacion5, certificacion6]
+
+    const contenedorCertificaciones = document.querySelector('.contenedor-certificaciones')
+
+    certificaciones.forEach(certificacion => {
+        const div = document.createElement('div')
+        div.classList.add('flex', 'flex-col', 'justify-center', 'content-center', 'gap-2', 'w-28', 'hover:opacity-80', 'mx-auto' )
+        div.innerHTML = `
+            <a href="${certificacion.url}" target="_blank">
+                <img src="${certificacion.img}" alt="${certificacion.alt}" class="w-28 h-28 object-cover">
+            </a>
+        `
+
+
+        /* Si es importante se agrega al principio, sino al final */
+        if(certificacion.importante){
+            if (contenedorCertificaciones) {
+            contenedorCertificaciones.prepend(div)
+            }
+        } else {
+            if (contenedorCertificaciones) {
+            contenedorCertificaciones.appendChild(div)
+            }
+        }
+    })
+</script>
